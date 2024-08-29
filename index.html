@@ -3,53 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trading Management App</title>
+    <title>Multiplayer Bingo</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore-compat.js"></script>
-    <!-- Your Firebase configuration -->
-    <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyB5OnfL7pSrqX1QWwi6Q8bhRzQzQURGkdA",
-        authDomain: "trading-management-3b242.firebaseapp.com",
-        projectId: "trading-management-3b242",
-        storageBucket: "trading-management-3b242.appspot.com",
-        messagingSenderId: "750422301439",
-        appId: "1:750422301439:web:9d13f53148da6206910aca",
-        measurementId: "G-JMKJW5SDHJ",
-      };
-      firebase.initializeApp(firebaseConfig);
-    </script>
   </head>
   <body>
-    <div class="container">
-      <h1>Trading Management App</h1>
-      <form id="trade-form">
-        <label for="symbol">Symbol:</label>
-        <input type="text" id="symbol" required />
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" required />
-        <label for="price">Price:</label>
-        <input type="number" id="price" step="0.01" required />
-        <button type="submit">Add Trade</button>
-      </form>
-      <h2>Trade History</h2>
-      <table id="trade-history">
-        <thead>
-          <tr>
-            <th>Symbol</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Trade rows will be added here dynamically -->
-        </tbody>
-      </table>
-      <button id="clear-trades">Clear All Trades</button>
+    <div id="game">
+      <h2>Arrange Your Opponent's Card</h2>
+      <div id="arrangeCard" class="card"></div>
+      <button id="submitCard">Submit Card</button>
+
+      <h2>Your Card</h2>
+      <div id="playerCard" class="card"></div>
+      <button id="markNumber">Mark Number</button>
+
+      <div id="status"></div>
     </div>
-    <script src="script.js"></script>
+
+    <script type="module" src="scripts.js"></script>
   </body>
 </html>
